@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let prev;
+      setInterval(() => {
+        const t = document.getElementById('t');
+        const list = t.querySelectorAll('.nav-link:not(.disabled)');
+        if (t) {
+          if (prev) {
+            prev.classList.remove('active');
+          }
+          prev = list[Math.floor(Math.random() * list.length)];
+          prev.classList.add('active');
+        }
+      }, 500);
+    </script>
+  </head>
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+    <!-- Example Code -->
+
+    <ul id="t" class="nav nav-underline card-header-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Title</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"
+          >Title with a long text to show the difference</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Title</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Title</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+
+    <!-- End Example Code -->
+  </body>
+</html>
